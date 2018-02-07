@@ -9,11 +9,11 @@ var nightmareBrowser = Nightmare({show: false})
 
 nightmareBrowser
 	.goto('<url>')
-	type('<html id>', '<action>')
-	click('<html button id>')
-	wait('<html id of results>')
+	.type('<html id>', '<action>')
+	.click('<html button id>')
+	.wait('<html id of results>')
 
-	evaluate(function(){
+	.evaluate(function(){
 		//returns a value that is sent to RESULT
 		//CLIENT-SIDE CODE
 	})
@@ -23,7 +23,7 @@ nightmareBrowser
 		console.log(result)
 	})
 
-let port = 80
+let port = 8080
 app.listen(() => {
 	console.log('running on ', port)
 })

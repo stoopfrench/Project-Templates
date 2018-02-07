@@ -30,12 +30,14 @@ app.listen(port, () => {
 
 
 //HTTP/HTTPS Server -----------------------------
+var httpsKey = secrets.httpsKey
+var httpsCert = secrets.httpsCert
 
-/*try {
+try {
     var httpsConfig = {
 
-        key: fs.readFileSync('KEY'),
-        cert: fs.readFileSync('CERT'),
+        key: fs.readFileSync(httpsKey),
+        cert: fs.readFileSync(httpsCert),
     }
 
     var httpsServer = HTTPS.createServer(httpsConfig, app)
@@ -60,4 +62,4 @@ catch(e){
     var httpServer = HTTP.createServer(app)
 
     httpServer.listen(80)
-}*/
+}
